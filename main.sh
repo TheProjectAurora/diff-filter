@@ -1,9 +1,16 @@
 #!/usr/bin/env bash
+set -ex
 
 INPUT_BASE_REF=$1
 INPUT_HEAD_REF=$2
 INPUT_BASE_DIR=$3
 INPUT_DIFF_FILTER=$4
+
+echo DEBUG: ${INPUT_BASE_REF}
+echo DEBUG: ${INPUT_HEAD_REF}
+echo DEBUG: ${INPUT_BASE_DIR}
+echo DEBUG: ${INPUT_DIFF_FILTER}
+
 
 AOUTPUT_TMP=$(
   git diff \
@@ -20,5 +27,5 @@ AOUTPUT_TMP=$(
   jq --slurp . | \
   tr -d "\ \n\r"
 )
-
+echo DEBUG: ${AOUTPUT_TMP}
 echo "dirs=${AOUTPUT_TMP}">>${GITHUB_OUTPUT}
