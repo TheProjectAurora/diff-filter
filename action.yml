@@ -16,7 +16,7 @@ outputs:
 runs:
     using: "composite"
     steps:
-      - run: ${{ github.action_path }}/main.sh ${{ github.base_ref }} ${{ github.head_ref }} ${{ inputs.base-dir }} ${{ inputs.diff-filter }}
+      - run: ${{ github.action_path }}/main.sh ${{ inputs.base-dir }} ${{ inputs.diff-filter }}
         id: entry
         shell: bash
 
