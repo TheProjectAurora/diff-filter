@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -ex
 
+echo ---
+env|grep GITHUB
+echo ---
+
 INPUT_BASE_REF=$1
 INPUT_HEAD_REF=$2
 INPUT_BASE_DIR=$3
