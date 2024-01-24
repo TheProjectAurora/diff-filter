@@ -4,7 +4,7 @@ set -ex
 echo ---
 env|grep GITHUB
 echo ---
-git --no-pager log --decorate=short --pretty=oneline -n1
+git --no-pager log --decorate=short --pretty=oneline
 echo ---
 
 INPUT_BASE_REF=$1
