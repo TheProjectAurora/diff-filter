@@ -23,9 +23,18 @@ echo DEBUG HEAD_REF   : "${HEAD_REF}"
 echo DEBUG BASE_DIR   : "${INPUT_BASE_DIR}"
 echo DEBUG DIFF_FILTER: "${INPUT_DIFF_FILTER}"
 
+echo "XXXXX"
+git --no-pager \
+  diff \
+  --name-only \
+  --diff-filter="${INPUT_DIFF_FILTER}" \
+  "${BASE_REF}" \
+  "${HEAD_REF}"
 
+echo "XXXXX"
 AOUTPUT_TMP=$(
-  git diff \
+  git --no-pager \
+    diff \
     --name-only \
     --diff-filter="${INPUT_DIFF_FILTER}" \
     "${BASE_REF}" \
