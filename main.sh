@@ -11,7 +11,7 @@ INPUT_BASE_DIR=$1
 INPUT_DIFF_FILTER=$2
 
 if [ "${GITHUB_EVENT_NAME}" == "pull_request" ]; then
-  BASE_REF=origin/${GITHUB_BASE_REF}
+  BASE_REF=$(git rev-parse origin/${GITHUB_BASE_REF})
   HEAD_REF="HEAD^1"
 elif  [ "${GITHUB_EVENT_NAME}" == "push" ]; then
   BASE_REF=HEAD
