@@ -12,7 +12,7 @@ INPUT_DIFF_FILTER=$2
 
 if [ "${GITHUB_EVENT_NAME}" == "pull_request" ]; then
   BASE_REF=$(git rev-parse origin/${GITHUB_BASE_REF})
-  HEAD_REF="HEAD^1"
+  HEAD_REF=$(git rev-parse HEAD)
 elif  [ "${GITHUB_EVENT_NAME}" == "push" ]; then
   BASE_REF=HEAD
   HEAD_REF="HEAD^"
